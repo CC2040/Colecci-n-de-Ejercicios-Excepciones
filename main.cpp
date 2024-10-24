@@ -1,6 +1,7 @@
-#include<iostream>
-#include"Ejercicio1/bandera.h"
-#include"Ejercicio2/Excepciones.h"
+#include <iostream>
+#include "Ejercicio1/bandera.h"
+#include "Ejercicio2/Excepciones.h"
+#include "Ejercicio3/Propagacion_explicita.h"
 
 int main() {
 
@@ -27,6 +28,14 @@ int main() {
     }
     catch (const std::invalid_argument& e) {
         std::cout << "Excepcion: " << e.what() << std::endl;
+    }
+
+    //Ejercicio 3
+    try {
+        func1();
+    }
+    catch (const std::runtime_error& e) {
+        std::cout << "Excepcion capturada en main: " << e.what() << std::endl;
     }
 
     return 0;
