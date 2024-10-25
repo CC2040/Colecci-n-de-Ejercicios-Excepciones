@@ -1,7 +1,7 @@
 #include "bandera.h"
 #include <iostream>
 
-// Variable global que actúa como bandera de error
+// Variable global que actúa como bandera de error.
 bool errorFlag = false;
 
 int divide(int a, int b) {

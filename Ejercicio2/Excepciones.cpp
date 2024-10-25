@@ -1,7 +1,7 @@
 #include "Excepciones.h"
 #include <iostream>
 
-// Versión de la función que devuelve un valor de error
+// Versión de la función que devuelve un valor de error.
 int divideError(int a, int b) {
     if (b == 0) {
         return -1; // valor de error

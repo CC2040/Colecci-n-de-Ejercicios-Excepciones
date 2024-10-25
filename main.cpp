@@ -3,6 +3,7 @@
 #include "Ejercicio2/Excepciones.h"
 #include "Ejercicio3/Propagacion_explicita.h"
 #include "Ejercicio4/excepciones_personalizadas.h"
+#include "Ejercicio5/Reactivacion.h"
 
 
 int main() {
@@ -47,6 +48,20 @@ int main() {
     }
     catch (const MiExcepcion& e) {
         std::cout << "Excepcion capturada: " << e.what() << std::endl;
+    }
+
+    //Ejercicio 5
+    try {
+        try {
+            lanzaExcepcion2();
+        }
+        catch (const std::runtime_error& e) {
+            std::cout << "Excepcion capturada y manejada. Reactivando..." << std::endl;
+            throw; // Relanza la excepción
+        }
+    }
+    catch (const std::runtime_error& e) {
+        std::cout << "Excepcion reactivada capturada: " << e.what() << std::endl;
     }
 
     return 0;

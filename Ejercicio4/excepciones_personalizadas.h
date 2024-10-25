@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 
+//Defino la funcion en el .h
 void lanzaExcepcion();
 
 // Definición de la clase de excepción personalizada
