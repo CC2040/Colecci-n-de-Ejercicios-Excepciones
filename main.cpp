@@ -4,7 +4,8 @@
 #include "Ejercicio3/Propagacion_explicita.h"
 #include "Ejercicio4/excepciones_personalizadas.h"
 #include "Ejercicio5/Reactivacion.h"
-
+#include "Ejercicio6/no_interceptadas.h"
+#include "Ejercicio7/Adquisición.h"
 
 int main() {
 
@@ -64,5 +65,23 @@ int main() {
         std::cout << "Excepcion reactivada capturada: " << e.what() << std::endl;
     }
 
+    //Ejercicio 6
+    lanzaExcepcion3();
+
+    //Ejercicio 7
+    std::ofstream file("archivo.txt");
+
+    try {
+        file.close(); // Cierra el archivo para simular un error
+        escribeEnArchivo(file);
+    }
+    catch (const std::runtime_error& e) {
+        std::cout << "Excepción capturada: " << e.what() << std::endl;
+    }
+
+    // Asegurarse de que el archivo esté cerrado
+    if (file.is_open()) {
+        file.close();
+    }
     return 0;
 }
