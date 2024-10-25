@@ -16,6 +16,7 @@ int main() {
         errorFlag = false;
     }
 
+    //
 
     //Ejercicio 2
     // Uso de la versión que devuelve un valor de error
